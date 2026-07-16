@@ -1,0 +1,9 @@
+[
+  {"name":"Luma","type":"platform","homepage":"https://lu.ma/","status":"adapter-ready"},
+  {"name":"Meetup","type":"platform","homepage":"https://www.meetup.com/","status":"adapter-ready"},
+  {"name":"Eventbrite","type":"platform","homepage":"https://www.eventbrite.com/","status":"adapter-ready"},
+  {"name":"AWS User Group Hyderabad","type":"community","homepage":"https://aws.amazon.com/events/","status":"curated"},
+  {"name":"Google Developer Groups","type":"community","homepage":"https://developers.google.com/community/gdg","status":"curated"},
+  {"name":"Microsoft Reactor","type":"community","homepage":"https://developer.microsoft.com/reactor/","status":"curated"},
+  {"name":"Localhost Hyderabad","type":"community","homepage":"https://localhost.run/","status":"curated"}
+]

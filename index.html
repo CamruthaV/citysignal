@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#081218" />
+    <title>CitySignal — Hyderabad developer events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="CitySignal home"><span class="brand-mark">⌁</span><span>citysignal</span></a>
+      <div class="city-picker"><span class="pin">⌖</span><span>Hyderabad</span><span class="chevron">⌄</span></div>
+      <button class="saved-button" id="savedToggle"><span>♡</span> Saved <b id="savedCount">0</b></button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <p class="eyebrow">YOUR CITY, ONE SIGNAL</p>
+        <h1>Developer events,<br /><em>without the hunt.</em></h1>
+        <p class="hero-copy">A local-first feed for Hyderabad’s builders. We collect scattered event listings, remove the noise, and surface the ones worth your time.</p>
+        <div class="search-shell">
+          <span class="search-icon">⌕</span>
+          <input id="query" autocomplete="off" placeholder="Try “GenAI workshops this weekend”" aria-label="Search developer events" />
+          <button id="searchButton">Find events <span>→</span></button>
+        </div>
+        <div class="prompt-row">
+          <button class="prompt-chip">Free events this week</button>
+          <button class="prompt-chip">Hackathons near Hitech City</button>
+          <button class="prompt-chip">Cloud &amp; AI</button>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="Event feed summary">
+        <div><strong id="eventTotal">12</strong><span>upcoming events</span></div>
+        <div><strong>7</strong><span>organizer feeds</span></div>
+        <div><strong>1</strong><span>city, zero noise</span></div>
+        <p><span class="live-dot"></span>Last signal refresh: just now</p>
+      </section>
+
+      <section class="content-grid">
+        <aside class="filters" aria-label="Filter events">
+          <div class="filter-heading"><span>FILTERS</span><button id="clearFilters">Clear all</button></div>
+          <div class="filter-group"><label>When</label><button class="filter-option active" data-filter="date" data-value="all">Any date</button><button class="filter-option" data-filter="date" data-value="week">This week</button><button class="filter-option" data-filter="date" data-value="weekend">This weekend</button></div>
+          <div class="filter-group"><label>Format</label><button class="filter-option" data-filter="format" data-value="In person"><i></i>In person</button><button class="filter-option" data-filter="format" data-value="Hybrid"><i></i>Hybrid</button><button class="filter-option" data-filter="format" data-value="Online"><i></i>Online</button></div>
+          <div class="filter-group"><label>Topics</label><button class="filter-option topic" data-filter="topic" data-value="AI">AI &amp; ML</button><button class="filter-option topic" data-filter="topic" data-value="Cloud">Cloud</button><button class="filter-option topic" data-filter="topic" data-value="Web">Web &amp; mobile</button><button class="filter-option topic" data-filter="topic" data-value="Career">Career</button></div>
+          <div class="filter-group"><label>Source</label><button class="filter-option" data-filter="source" data-value="Luma">Luma</button><button class="filter-option" data-filter="source" data-value="Meetup">Meetup</button><button class="filter-option" data-filter="source" data-value="Eventbrite">Eventbrite</button><button class="filter-option" data-filter="source" data-value="Community">Community feeds</button></div>
+        </aside>
+
+        <section class="feed">
+          <div class="feed-heading"><div><p class="eyebrow">CURATED FOR YOU</p><h2 id="feedTitle">Upcoming in Hyderabad</h2></div><button class="sort-button" id="sortButton">Soonest <span>⌄</span></button></div>
+          <div id="aiInsight" class="ai-insight" hidden></div>
+          <div id="eventList" class="event-list"></div>
+          <div id="emptyState" class="empty-state" hidden><span>⌁</span><h3>No signal found</h3><p>Try clearing a filter or searching a broader topic.</p><button id="emptyReset">Show all events</button></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog id="eventDialog"><button class="dialog-close" id="closeDialog" aria-label="Close">×</button><div id="dialogContent"></div></dialog>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
